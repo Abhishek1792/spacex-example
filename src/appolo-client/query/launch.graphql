@@ -1,0 +1,57 @@
+query Launch($launchId: ID!) {
+  launch(id: $launchId) {
+    upcoming
+    tentative_max_precision
+    telemetry {
+      flight_club
+    }
+    static_fire_date_utc
+    static_fire_date_unix
+    rocket {
+      rocket_name
+      rocket_type
+      second_stage {
+        block
+        payloads {
+          customers
+          id
+          manufacturer
+          nationality
+          norad_id
+          orbit
+          payload_mass_kg
+          payload_mass_lbs
+          payload_type
+          reused
+        }
+      }
+    }
+    mission_name
+    mission_id
+    links {
+      article_link
+      flickr_images
+      mission_patch
+      mission_patch_small
+      presskit
+      reddit_campaign
+      reddit_launch
+      reddit_media
+      reddit_recovery
+      video_link
+      wikipedia
+    }
+    launch_success
+    launch_site {
+      site_id
+      site_name
+      site_name_long
+    }
+    launch_date_utc
+    launch_date_unix
+    launch_date_local
+    is_tentative
+    id
+    details
+  }
+}

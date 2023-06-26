@@ -1,0 +1,18 @@
+query Landpads($limit: Int, $offset: Int) {
+  landpads(limit: $limit, offset: $offset) {
+    attempted_landings
+    details
+    full_name
+    id
+    landing_type
+    location {
+      latitude
+      longitude
+      name
+      region
+    }
+    status
+    successful_landings
+    wikipedia
+  }
+}
