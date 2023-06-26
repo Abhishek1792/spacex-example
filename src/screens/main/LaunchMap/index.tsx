@@ -4,8 +4,12 @@ import React, { useEffect } from 'react';
 import { View, StyleSheet, PermissionsAndroid } from 'react-native';
 /** import map component */
 import MapView, { Marker } from 'react-native-maps';
+import { useQuery } from '@apollo/client'
+import LAUNCH_PAD_QUERY from '@src/appolo-client/query/launchpads.graphql'
 
 const LaunchMap = () => {
+  const { data, loading, error } = useQuery(LAUNCH_PAD_QUERY)
+  console.log("data", data)
   /**
   * handle android navigation permission
   */
